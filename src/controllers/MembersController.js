@@ -1,9 +1,9 @@
-const StudentsModel=require('../models/StudentsModel')
+const MembersModel = require('../models/MembersModel');
 
-// C=Create
-exports.InsertStudent=(req,res)=>{
+// Create
+exports.memberCreate=(req,res)=>{
    let reqBody= req.body;
-   StudentsModel.create(reqBody,(err,data)=>{
+   MembersModel.create(reqBody,(err,data)=>{
        if(err){
            res.status(400).json({status:"fail",data:err})
        }
@@ -13,11 +13,41 @@ exports.InsertStudent=(req,res)=>{
    })
 }
 
-// R=Read
-exports.ReadStudent=(req,res)=>{
-    let Query={};
-    let Projection="Name Roll"
-    StudentsModel.find(Query,Projection,(err,data)=>{
+// Read 
+exports.membersSelect=(req,res)=>{
+    let Query = {};
+    let Projection = {'member_id':1,'firstname':1,'middlename':1,'lastname':1,'gender':1,'contact':1,'address':1,'email':1,'date_created':1,'_id':0}
+    MembersModel.find(Query,Projection,(err,data)=>{
+        if(err){
+            res.status(400).json({status:"fail",data:err})
+        }
+        else {
+            res.status(200).json({status:"success",data:data})
+        }
+    })
+}
+
+//Update 
+exports.memberEdit = (req,res)=>{
+    let id=req.params.id
+    let query={_id:id}
+    let reqBody= req.body
+    MembersModel.updateOne(query,reqBody,(err,data)=>{
+        if(err){
+            res.status(400).json({status:"fail",data:err})
+        }
+        else {
+            res.status(200).json({status:"success",data:data})
+        }
+    })
+    
+}
+
+//Delete 
+exports.memberRemove = (req,res)=>{
+    let id=req.params.id 
+    let query = {_id:id}
+    MembersModel.remove(query,(err,data)=>{
         if(err){
             res.status(400).json({status:"fail",data:err})
         }
@@ -28,35 +58,4 @@ exports.ReadStudent=(req,res)=>{
 }
 
 
-// U=Update
-exports.UpdateStudent=(req,res)=>{
-    let id=req.params.id;
-    let QUERY={_id:id}
-    let reqBody= req.body;
-    StudentsModel.updateOne(QUERY,reqBody,(err,data)=>{
-        if(err){
-            res.status(400).json({status:"fail",data:err})
-        }
-        else {
-            res.status(200).json({status:"success",data:data})
-        }
-    })
-}
-
-
-
-// D=Delete
-exports.DeleteStudent=(req,res)=>{
-    let id=req.params.id;
-    let QUERY={_id:id}
-    StudentsModel.remove(QUERY,(err,data)=>{
-        if(err){
-            res.status(400).json({status:"fail",data:err})
-        }
-        else {
-            res.status(200).json({status:"success",data:data})
-        }
-    })
-
-}
 

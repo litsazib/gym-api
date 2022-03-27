@@ -1,10 +1,10 @@
 var jwt = require('jsonwebtoken');
-let Key = "AVATAR@2022"
+let Key = "GYM@2022"
 exports.CreateToken = (req,res)=>{
     
     let Payload = {
         // exp:Math.floor(Date.now() / 1000) + (20)
-        exp:Math.floor(Date.now() / 1000) + (60*60),
+        exp:Math.floor(Date.now() / 1000) + (72*60*60),
         date:{auth:"authorization successful"}
     }
     

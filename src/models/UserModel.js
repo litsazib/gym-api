@@ -1,16 +1,6 @@
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt'),SALT_WORK_FACTOR = 10;
 
-
-function encrypt(text) {
-  var cipher = crypto.createCipher(algorithm, password);
-  var crypted = cipher.update(text, 'utf8', 'hex');
-  crypted += cipher.final('hex');
-  return crypted;
-}
-
-
-
 const DataSchema= mongoose.Schema({
     name:{
         type:String,
