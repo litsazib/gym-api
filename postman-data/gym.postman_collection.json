@@ -1,0 +1,1001 @@
+{
+	"info": {
+		"_postman_id": "53b4d283-2026-477c-bd2e-02bcc7fc7509",
+		"name": "gym",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "urse",
+			"item": [
+				{
+					"name": "create-user",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\":\"rakib\",\n    \"username\":\"SuperAdmin\",\n    \"password\":\"admin12345\",\n    \"type\":1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/create-user",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"create-user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "users",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/users",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "user-edit",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/user-edit",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"user-edit"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "user-remove",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/user-remove/623ec4306518acd6adec38a2",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"user-remove",
+								"623ec4306518acd6adec38a2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\":\"SuperAdmin\",\n    \"password\":\"12345678\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/login",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Trainer",
+			"item": [
+				{
+					"name": "create-trainer",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\":\"aliHasan\",\n    \"contact\":\"01724255853\",\n    \"email\":\"alihasan@92gmail.com\",\n    \"rate\":\"800.55\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/create-trainer",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"create-trainer"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "trainers",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/trainers",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"trainers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "trainers-edit",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\":\"rakib\",\n    \"contact\":\"01724255853\",\n    \"email\":\"rakib@92gmail.com\",\n    \"rate\":\"1200.50\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/trainers-edit/623f1fd1a9ac843b51cecbf6",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"trainers-edit",
+								"623f1fd1a9ac843b51cecbf6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "trainers-remove",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/trainers-remove/623f1fb3a9ac843b51cecbe7",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"trainers-remove",
+								"623f1fb3a9ac843b51cecbe7"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Plans",
+			"item": [
+				{
+					"name": "create-plan",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"plan\":12,\n    \"amount\":10590.90\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/create-plan",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"create-plan"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "plans",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/plans",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"plans"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "plan-edit",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"plan\":\"demoTest\",\n    \"amount\":1590.90\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/plan-edit/623f2b3b99bb9c5e19fa56f9",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"plan-edit",
+								"623f2b3b99bb9c5e19fa56f9"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "plan-remove",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/plan-remove/623f2b3b99bb9c5e19fa56f9",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"plan-remove",
+								"623f2b3b99bb9c5e19fa56f9"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Package",
+			"item": [
+				{
+					"name": "create-Package",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"package\":\"Premium\",\n    \"description\":\"In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without\",\n    \"amount\":2500\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/create-Package",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"create-Package"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "packages",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/packages",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"packages"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "package-edit",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"package\":\"SuperDelux\",\n    \"description\":\"In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without\",\n    \"amount\":6500\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/package-edit/623f30cc06ce10cefb008aa6",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"package-edit",
+								"623f30cc06ce10cefb008aa6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "package-remove",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/package-remove/623f30cc06ce10cefb008aa6",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"package-remove",
+								"623f30cc06ce10cefb008aa6"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Member",
+			"item": [
+				{
+					"name": "create-member",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"member_id\":\"5555\",\n    \"firstname\":\"alim\",\n    \"middlename\":\"sd\",\n    \"lastname\":\"hasan\",\n    \"gender\":\"male\",\n    \"contact\":\"01724255853\",\n    \"address\":\"Tangail Bhuapur\",\n    \"email\":\"romanhasan42@gmail.com\",\n    \"date_created\":\"\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/create-member",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"create-member"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "members",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/members",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"members"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "member-edit",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"member_id\":\"5050\",\n    \"firstname\":\"alimHosain\",\n    \"middlename\":\"sd\",\n    \"lastname\":\"hasan\",\n    \"gender\":\"male\",\n    \"contact\":\"01724255853\",\n    \"address\":\"Tangail Bhuapur\",\n    \"email\":\"alim_hosai90n@gmail.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/member-edit/623ffaa9cd6c3839ccbff802",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"member-edit",
+								"623ffaa9cd6c3839ccbff802"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "member-remove",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/member-remove/623ffaa9cd6c3839ccbff802",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"member-remove",
+								"623ffaa9cd6c3839ccbff802"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Registration",
+			"item": [
+				{
+					"name": "registration",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"member_id\":4444,\n\"plan_id\":\"623f2cfb14e1dde81a232323\",\n\"package_id\":\"623f30c206cew3rewerfb008aa4\",\n\"trainer_id\":\"623ffa07cd6c38234234ff7ff\",\n\"status\":0\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/registration",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"registration"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "registration-list",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/registration-list",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"registration-list"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "registration-edit",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"status\":0\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/registration-edit/62401f8a80075c56868001ea",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"registration-edit",
+								"62401f8a80075c56868001ea"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "registration-remove",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/registration-remove/6240216278082a9d54a95710",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"registration-remove",
+								"6240216278082a9d54a95710"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Payments",
+			"item": [
+				{
+					"name": "payments",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"registration_id\":\"6240200dsadasD6868001ec\",\n    \"amount\":1500.44,\n    \"remarks\":\"payment done\",\n    \"type\":2\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/payments",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"payments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "payments-list",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/payments-list",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"payments-list"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "payments-edit",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"type\":1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/payments-edit/624024c52f7858da8abaa906",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"payments-edit",
+								"624024c52f7858da8abaa906"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "payments-remove",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/payments-remove/624024c52f7858da8abaa906",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"payments-remove",
+								"624024c52f7858da8abaa906"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Schedule",
+			"item": [
+				{
+					"name": "create-schedule",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"member_id\":\"1111\",\n    \"dow\":\"date of weak\",\n    \"date_to\":\"2022-01-30 14:10:07\",\n    \"time_to\":\"2022-03-27 20:10:07\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/create-schedule",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"create-schedule"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "schedules",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/schedules",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"schedules"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "schedule-edit/",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"member_id\":\"5555\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/schedule-edit/62402cfa6e86c0814ee24feb",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"schedule-edit",
+								"62402cfa6e86c0814ee24feb"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "schedule-remove",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/schedule-remove/62402cfa6e86c0814ee24feb",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"schedule-remove",
+								"62402cfa6e86c0814ee24feb"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Test",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "http://localhost:5000/api/v1/",
+			"type": "string"
+		},
+		{
+			"key": "token",
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NDg2MTg5OTQsImRhdGEiOnsiX2lkIjoiNjIzZmY5Mzg5MmE1OGY5N2ZiN2Q2MjE5IiwibmFtZSI6InJha2liIiwidXNlcm5hbWUiOiJTdXBlckFkbWluIiwicGFzc3dvcmQiOiIxMjM0NTY3OCIsInR5cGUiOjF9LCJpYXQiOjE2NDgzNTk3OTR9.YTyg9i5ZIZWPL87zcMxuTJuBJTU9Zl_6jSOGAS2H_1w",
+			"type": "string"
+		}
+	]
+}
