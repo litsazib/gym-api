@@ -3,6 +3,7 @@ const MembersModel = require('../models/MembersModel');
 // Create
 exports.memberCreate=(req,res)=>{
    // let reqBody= req.body;
+   
    var autoNumber = ()=> {
      return Math.floor(Math.random() * 90000) + 10000
    }
