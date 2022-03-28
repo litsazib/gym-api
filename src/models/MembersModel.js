@@ -1,8 +1,18 @@
 const mongoose = require('mongoose');
 const Float = require('mongoose-float').loadType(mongoose);
 
+var autoNumber = ()=> {
+  return Math.floor(Math.random() * 90000) + 10000
+}
+
+// var autoNumber = setInterval(() => {
+//     var minm = 10000;
+//     var maxm = 99999;
+//     return Math.floor(Math.random() * (maxm - minm + 1)) + minm;
+// },1000);
+
 const DataSchema = mongoose.Schema({
-    
+
     member_id:{
         type:Number,
         unique:true

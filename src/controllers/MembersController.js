@@ -2,8 +2,22 @@ const MembersModel = require('../models/MembersModel');
 
 // Create
 exports.memberCreate=(req,res)=>{
-   let reqBody= req.body;
-   MembersModel.create(reqBody,(err,data)=>{
+   // let reqBody= req.body;
+   var autoNumber = ()=> {
+     return Math.floor(Math.random() * 90000) + 10000
+   }
+   const requestData = {
+        member_id: autoNumber(),
+        firstname:req.body.firstname,
+        middlename:req.body.middlename,
+        lastname:req.body.lastname,
+        gender:req.body.gender,
+        contact:req.body.contact,
+        address:req.body.address,
+        email:req.body.email
+    }
+    console.log(requestData);
+   MembersModel.create(requestData,(err,data)=>{
        if(err){
            res.status(400).json({status:"fail",data:err})
        }

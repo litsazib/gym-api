@@ -62,28 +62,28 @@ exports.RemoveUser = (req,res)=>{
 exports.UserLogin =(req,res)=> {
     let username=req.body['username'];   
     var password = req.body['password'];
-
-   //  bcrypt.comparePassword(pass,password,function(err, results){
-   //      if(err){
-   //          throw new Error(err)
-   //       }
-   //       if (results) {
-   //          return res.status(200).json({ status: "Login success" })
-   //      } else {
-   //          return res.status(401).json({ status: "Invalid credencial",data:pass })
-   //      }
-   // })
     
     UserModel.find({username,password},(err,data)=>{
       if(err){
-          res.status(400).json({status:"fail",data:err})
+         res.status(400).json({status:"fail",data:err})
       }
       else {
+          // bcrypt.compare(password,password,(err,results)=>{
+          //          if(err){
+          //              throw new Error(err)
+          //           }
+          //           if (results) {
+          //              return res.status(200).json({ status: "Login success",data:results })
+          // 
+          //          } else {
+          //              return res.status(401).json({ status: "Invalid credencial",data:results })
+          //          }
+          // });
           if(data.length>0){
               // Create Auth Token
               let Payload={exp: Math.floor(Date.now() / 1000) + (72*60*60), data:data[0]}
               let token = jwt.sign( Payload,'GYM@2022');
-    
+          
               res.status(200).json({status:"success",token:token,data:data[0]})
           }
           else {
