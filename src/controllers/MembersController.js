@@ -7,6 +7,7 @@ exports.memberCreate=(req,res)=>{
      return Math.floor(Math.random() * 90000) + 10000
    }
    const requestData = {
+        // member_id: !null ? hasMember_id : autoNumber();
         member_id: autoNumber(),
         firstname:req.body.firstname,
         middlename:req.body.middlename,

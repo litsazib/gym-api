@@ -1,6 +1,6 @@
 const express=require('express');
 const TestController = require("../controllers/TestController");
-
+const MembershipController = require("../controllers/MembershipController");
 const UserController = require("../controllers/UserController");
 const TrainerController = require("../controllers/TrainerController");
 const PlansController = require("../controllers/PlansController");
@@ -17,6 +17,9 @@ const router=  express.Router();
 
 // Test api
 router.get("/",TestController.Test);
+
+//MembershipPlan Deltais 
+router.get("/membership-info",MembershipController.membershipDetails);
 
 // User module
 router.post("/create-user",UserController.CreateUser);
